@@ -2,7 +2,11 @@
 
 ## Overview
 
-This project focuses on building a supervised machine learning model to classify fraud risk based on transaction data. The classification process uses labeled data derived from the previous clustering stage, allowing the model to learn patterns and predict fraud risk categories.
+This project focuses on building a supervised machine learning model to classify fraud risk based on transaction data. This classification project is a continuation of the previous clustering project, where the clustering results were used to generate labels for fraud risk categories.
+
+In the previous stage, unsupervised learning was applied to group transaction data into several clusters based on similar patterns. In this project, those cluster-based labels are used as the target variable for classification modeling, allowing the model to learn patterns and predict fraud risk categories on new data.
+
+Previous project: [Fraud Detection Customer Segmentation using Clustering](https://github.com/iyashaa/fraud-detection-customer-segmentation)
 
 ## Dataset
 
@@ -12,6 +16,7 @@ Dataset link: [Google Drive Dataset Link](https://docs.google.com/spreadsheets/d
 
 ## Objectives
 
+* Use cluster-based labels from the previous project as the target variable.
 * Prepare the dataset for classification modeling.
 * Perform data preprocessing and feature engineering.
 * Split the dataset into training and testing data.
@@ -23,17 +28,17 @@ Dataset link: [Google Drive Dataset Link](https://docs.google.com/spreadsheets/d
 
 * Python
 * Pandas
-* NumPy
-* Matplotlib
-* Seaborn
 * Scikit-Learn
+* Joblib
 * Jupyter Notebook
 
 ## Methodology
 
-The project begins with loading the dataset and checking the data quality. Preprocessing steps are then applied to prepare the data for machine learning, including handling missing values, encoding categorical variables, and scaling features if required.
+This project begins by loading the dataset generated from the previous clustering process. The dataset already contains cluster-based labels that represent different fraud risk categories. These labels are then used as the target variable for supervised learning.
 
-After preprocessing, the dataset is divided into training and testing sets. Several classification models are trained and evaluated to determine which model provides the best performance. The evaluation is performed using metrics such as accuracy, precision, recall, F1-score, and confusion matrix.
+After loading the data, preprocessing steps are performed to prepare the dataset for machine learning. The dataset is then divided into training and testing sets. Several classification models are trained and evaluated to determine which model provides the best performance.
+
+The models used in this project include Decision Tree and Random Forest. Model evaluation is performed using accuracy, precision, recall, F1-score, and classification report. Hyperparameter tuning is also applied using GridSearchCV and RandomizedSearchCV to improve model performance.
 
 ## Evaluation Metrics
 
@@ -43,12 +48,12 @@ The model performance is evaluated using the following metrics:
 * Precision
 * Recall
 * F1-Score
-* Confusion Matrix
+* Classification Report
 
 ## Result
 
-The classification model successfully learned patterns from the dataset and was able to classify fraud risk categories based on transaction-related features. The evaluation results show that the model can be used as a basic approach for fraud risk prediction.
+The classification model successfully learned patterns from the cluster-based dataset and was able to classify fraud risk categories based on transaction-related features. The evaluation results show that the model can be used as a basic approach for fraud risk prediction.
 
 ## Conclusion
 
-This project demonstrates the implementation of supervised machine learning for fraud risk classification. By using data generated from the clustering process, the classification model can help predict fraud risk categories and support further fraud detection analysis.
+This project demonstrates how clustering results can be extended into a supervised machine learning task. By using labels generated from the previous clustering process, the classification model can help predict fraud risk categories and support further fraud detection analysis.
